@@ -1,0 +1,43 @@
+.ProfileIcon {
+    position: relative;
+}
+.ProfileIcon > img{
+    width: 120px;
+    height: 120px;
+    float: left;
+    margin-left: 390px;
+}
+
+.TierBorder > img {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    float: left;
+    top: 190px;
+    margin-left: -130px;
+}
+
+.SummonerLevel {
+    position: absolute;
+    margin-top: 110px;
+    margin-left: -80px;
+    width: 44px;
+    height: 24px;
+    padding-top: 3px;
+    box-sizing: border-box;
+    background: url(http://opgg-static.akamaized.net/images/site/summoner/bg-levelbox.png);
+    background-size: 100%;
+    line-height: 17px;
+    font-family: Helvetica,AppleSDGothic,"Apple SD Gothic Neo",AppleGothic,Arial,Tahoma;
+    font-size: 14px;
+    text-align: center;
+    color: #eabd56;
+}
+
+.Name {
+    position: relative;
+    font-weight: bold;
+    font-size: 50px;
+    margin-left: 50px;
+    top: 30px;
+}
