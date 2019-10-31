@@ -1,8 +1,10 @@
 {
+  "homepage": "http://rlaw2021.github.io/summoner_search_react",
   "name": "giphy-sample-react-hooks",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "create-react-app": "^3.2.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.2"
@@ -11,11 +13,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "summoner_search -d build"
   },
   "devDependencies": {
     "react-test-renderer": "^16.9.0",
-    "sinon": "^7.4.2"
+    "sinon": "^7.4.2",
+    "summoner_search": "file:summoner_search"
   },
   "jest": {
     "collectCoverageFrom": [
