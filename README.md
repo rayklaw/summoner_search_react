@@ -1,4 +1,4 @@
-# Summoner Search
+# Summoner Search (In Progress)
 
 This is a web app made using the React.js framework. Summoner Search implements the Riot API to search up players and display stats about their summoner as well as their recent games
 
@@ -14,5 +14,10 @@ To see the site locally, run `npm start` then visit `http://localhost:3000`.
 ## Build/Deploy
 
 Create a deployment-ready build with `npm run build`.
+
+## Screenshots
+
+![](https://github.com/rlaw2021/summoner_search_react/blob/master/Summoner%20Search%20SC1.png)
+![](https://github.com/rlaw2021/summoner_search_react/blob/master/Summoner%20Search%20SC2.png)
 
 
