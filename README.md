@@ -1,6 +1,7 @@
 # Summoner Search (In Progress)
 
-This is a web app made using the React.js framework. Summoner Search implements the Riot API to search up players and display stats about their summoner as well as their recent games
+This is a web app made using the React.js framework. Summoner Search implements the Riot API to search up players and display stats about their summoner as well as their recent games. 
+**Summoner Search is currently using mock data.
 
 ## Setup
 
