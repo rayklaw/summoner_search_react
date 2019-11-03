@@ -5,7 +5,7 @@ import './AppHeader.css'
 // Note how functional components that don’t have additional logic simply return their markup.
 const AppHeader = () => (
   <div className="AppHeader">
-    <h1>Poverty Opgg</h1>
+    <h1>Summoner Search</h1>
   </div>
 )
 
