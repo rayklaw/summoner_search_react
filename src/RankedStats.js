@@ -10,9 +10,9 @@ const RankedStats = props => {
         if (string == 'III') { return 3 }
         if (string == 'IV') { return 4 }
     }
-    const rankedSoloIcon = `https://opgg-static.akamaized.net/images/medals/${rankedStats[2].tier.toLowerCase()}_${fromRoman(rankedStats[2].rank)}.png`
-    const rankedFlexIcon = `https://opgg-static.akamaized.net/images/medals/${rankedStats[0].tier.toLowerCase()}_${fromRoman(rankedStats[0].rank)}.png`
-    const rankedTftIcon = `https://opgg-static.akamaized.net/images/medals/${rankedStats[1].tier.toLowerCase()}_${fromRoman(rankedStats[1].rank)}.png`
+    const rankedSoloIcon = rankedStats[2].tier == 'UNRANKED' ? `http://opgg-static.akamaized.net/images/medals/default.png` : `https://opgg-static.akamaized.net/images/medals/${rankedStats[2].tier.toLowerCase()}_${fromRoman(rankedStats[2].rank)}.png`
+    const rankedFlexIcon = rankedStats[0].tier == 'UNRANKED' ? `http://opgg-static.akamaized.net/images/medals/default.png` : `https://opgg-static.akamaized.net/images/medals/${rankedStats[0].tier.toLowerCase()}_${fromRoman(rankedStats[0].rank)}.png`
+    const rankedTftIcon = rankedStats[1].tier == 'UNRANKED' ? `http://opgg-static.akamaized.net/images/medals/default.png` : `https://opgg-static.akamaized.net/images/medals/${rankedStats[1].tier.toLowerCase()}_${fromRoman(rankedStats[1].rank)}.png`
 
     return (
         <div className="RankedStats">
