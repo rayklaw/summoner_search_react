@@ -26,3 +26,12 @@
   margin: 1rem;
   padding: 1rem;
 }
+
+.SummonerInfo {
+  margin-top: -10px;
+  padding: 20px;
+}
+
+.MatchHistory {
+  margin-top: 15px;
+}
