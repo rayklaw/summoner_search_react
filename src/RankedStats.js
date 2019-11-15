@@ -2,11 +2,10 @@ import React from 'react'
 
 import './RankedStats.css'
 
-//idk why this one has to be global when the one is matchHistory doesnt
-let ordered = new Array(3)
-
 const RankedStats = props => {
     const { rankedStats } = props
+
+    let ordered = new Array(3)
 
     function fromRoman(string) {
         if (string === 'I') { return 1 }
@@ -17,29 +16,15 @@ const RankedStats = props => {
 
     rankedStats.forEach((stat, index) => {
         if (stat.queueType === "RANKED_SOLO_5x5") {
-            stat.queueType = "Ranked Solo Queue"
             ordered[0] = rankedStats[index]
         }
         if (stat.queueType === "RANKED_FLEX_SR") {
-            stat.queueType = "Ranked Flex Queue"
             ordered[1] = rankedStats[index]
         }
         if (stat.queueType === "RANKED_TFT") {
-            stat.queueType = "Ranked Teamfight Tactics"
             ordered[2] = rankedStats[index]
         }
     })
-
-    //console.log('o', ordered)
-    //console.log('r', rankedIcon)
-
-    // {ordered.map((rankedStat) => {
-    //     return (
-    //         <div className="RankedStat" key={rankedStat.leagueId}>
-    //             <img src={rankedStat.tier === 'UNRANKED' ? `http://opgg-static.akamaized.net/images/medals/default.png` : `https://opgg-static.akamaized.net/images/medals/${rankedStat.tier.toLowerCase()}_${fromRoman(rankedStat.rank)}.png`} alt="Ranked Tier Icon"></img>
-    //             <div><p>{rankedStat.queueType}</p><p> {rankedStat.tier} {rankedStat.rank} {rankedStat.leaguePoints} LP </p><br></br><p>{rankedStat.wins} Wins / {rankedStat.losses} Losses</p><p>{Math.floor(rankedStat.wins / (rankedStat.wins + rankedStat.losses) * 100)}% Winrate</p></div>
-    //         </div>)
-    // })}
 
     return (
         <div className="RankedStats">

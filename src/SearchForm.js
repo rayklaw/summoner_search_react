@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
-
 import './SearchForm.css'
+
+/*--------------------------------------------------------------
+Switching between Riot API data and Mock data: (default is Riot API data)
+change the file named "mock.js" to "api.js" to switch to mock data
+---------------------------------------------------------------*/
 
 import SummonerInfo from './SummonerInfo'
 import RankedStats from './RankedStats'
@@ -24,63 +28,34 @@ const SearchForm = () => {
   const performQuery = async event => {
     event.preventDefault()
     setError(null)
+    setQuery('')
+    setSummoner([])
+    setMatchHistory([])
+    setRankedStats([])
+    setMatches([])
 
     try {
-      console.log('PERFORMING QUERY...', query)
       let promises = []
-      let promises2 = []
-      // const summoner = await searchSummonerByName(query.toLowerCase())
-      // //console.log('summoner', summoner)
-      // const rankedStats = await searchRankedStats(summoner.id)
-      // //console.log('rankedstats', rankedStats)
-      // const matchHistory = await getMatchHistory(summoner.accountId)
-      // //console.log('matchHistory', matchHistory)
-      // setSummoner(summoner)
-      // setRankedStats(rankedStats)
-      // setMatchHistory(matchHistory)
-      searchSummonerByName(query.toLowerCase()).then(async summoner => {
-        console.log('summoner1', summoner)
 
-        const rankedStats = await searchRankedStats(summoner.id)
-        console.log('ranked', rankedStats)
+      const summoner = await searchSummonerByName(query.toLowerCase())
+      const rankedStats = await searchRankedStats(summoner.id)
+      const matchHistory = await getMatchHistory(summoner.accountId)
 
-        getMatchHistory(summoner.accountId).then(async matchHistory => {
-          console.log('match', matchHistory)
+      setSummoner(summoner)
+      setRankedStats(rankedStats)
+      setMatchHistory(matchHistory)
 
-          matchHistory.matches.forEach((match) => {
-            promises.push(getGame(match.gameId))
-          })
-          Promise.all(promises).then((games) => {
-            setSummoner(summoner)
-            setMatchHistory(matchHistory)
-            setMatches(games)
-            setRankedStats(rankedStats)
-
-
-            console.log('games', games)
-          })
-
-        })
-
+      matchHistory.matches.forEach((match) => {
+        promises.push(getGame(match.gameId))
       })
-
-      // matchHistory.matches.forEach((match) => {
-      //   promises.push(getGame(match.gameId))
-      // })
-      // Promise.all(promises).then((response) => {
-      //   setMatches(response)
-      // })
-
+      Promise.all(promises).then((response) => {
+        setMatches(response)
+      })
     } catch (error) {
-      console.log(error)
-      setError('Sorry, but something went wrong.')
+      setError('This Summoner does not exist in the NA region or too many requests were sent')
     }
   }
 
-  /*
-    useEffect(() => simulateClick(), [query])
-    ref={simulateClick}
-  */
   return (
     <form className="SearchForm" onSubmit={performQuery}>
       <input name="query" type="text" placeholder="Enter a Summoner Name" value={query} onChange={handleQueryChange} />
@@ -95,13 +70,9 @@ const SearchForm = () => {
         </div>
       )}
 
-      {console.log('matches', matches)}
-      {console.log('ranked', rankedStats)}
-      {console.log('summoner', summoner)}
-
-      {summoner.id && rankedStats && <div className="SummonerInfo">{<SummonerInfo summoner={summoner} rankedStats={rankedStats} />}</div>}
-      {summoner.id && rankedStats && <div className="RankedStats">{<RankedStats rankedStats={rankedStats} />}</div>}
-      {summoner.id && matchHistory.matches && matches && <div className="MatchHistory">{<MatchHistory handleQueryChange={handleQueryChange} performQuery={performQuery} matchHistory={matchHistory.matches} summoner={summoner} matches={matches} query={query} setQuery={setQuery} />}</div>}
+      {summoner.id && <div className="SummonerInfo">{<SummonerInfo summoner={summoner} rankedStats={rankedStats} />}</div>}
+      {summoner.id && <div className="RankedStats">{<RankedStats rankedStats={rankedStats} />}</div>}
+      {summoner.id && rankedStats[0] && matchHistory.matches && matches && <div className="MatchHistory">{<MatchHistory handleQueryChange={handleQueryChange} performQuery={performQuery} matchHistory={matchHistory.matches} summoner={summoner} matches={matches} query={query} setQuery={setQuery} />}</div>}
 
     </form>
   )

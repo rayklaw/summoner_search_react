@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ranked stats renders 1`] = `
+<div
+  className="RankedStats"
+>
+  <div
+    className="RankedStatsSolo"
+  >
+    <img
+      alt="Ranked Tier Icon"
+      src="https://opgg-static.akamaized.net/images/medals/challenger_1.png"
+    />
+    <div>
+      <p>
+        Ranked Solo Queue
+      </p>
+      <p>
+        CHALLENGER
+         
+        I
+         
+        64
+         LP
+      </p>
+      <br />
+      <p>
+        4
+         Wins / 
+        20
+         Losses
+      </p>
+      <p>
+        16
+        % Winrate
+      </p>
+    </div>
+  </div>
+  <div
+    className="RankedStatsFlex"
+  >
+    <img
+      alt="Ranked Tier Icon"
+      src="http://opgg-static.akamaized.net/images/medals/default.png"
+    />
+    <div>
+      <p>
+        Ranked Flex Queue
+      </p>
+      <br />
+      <p>
+        Unranked
+      </p>
+    </div>
+  </div>
+  <div
+    className="RankedStatsTft"
+  >
+    <img
+      alt="Ranked Tier Icon"
+      src="http://opgg-static.akamaized.net/images/medals/default.png"
+    />
+    <div>
+      <p>
+        Ranked Teamfight Tactics
+      </p>
+      <br />
+      <p>
+        Unranked
+      </p>
+    </div>
+  </div>
+</div>
+`;

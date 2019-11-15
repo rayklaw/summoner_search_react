@@ -5,12 +5,10 @@ exports[`should start with a disabled search button 1`] = `
   className="SearchForm"
   onSubmit={[Function]}
 >
-  <p>
-    Enter a search term:
-  </p>
   <input
     name="query"
     onChange={[Function]}
+    placeholder="Enter a Summoner Name"
     type="text"
     value=""
   />
@@ -21,12 +19,9 @@ exports[`should start with a disabled search button 1`] = `
       disabled={true}
       type="submit"
     >
-      Search Giphy!
+      Search a Summoner!
     </button>
   </div>
-  <div
-    className="SearchResults"
-  />
 </form>
 `;
 
@@ -35,12 +30,10 @@ exports[`should start with an empty search field 1`] = `
   className="SearchForm"
   onSubmit={[Function]}
 >
-  <p>
-    Enter a search term:
-  </p>
   <input
     name="query"
     onChange={[Function]}
+    placeholder="Enter a Summoner Name"
     type="text"
     value=""
   />
@@ -51,11 +44,8 @@ exports[`should start with an empty search field 1`] = `
       disabled={true}
       type="submit"
     >
-      Search Giphy!
+      Search a Summoner!
     </button>
   </div>
-  <div
-    className="SearchResults"
-  />
 </form>
 `;

@@ -2,11 +2,11 @@ import React from 'react'
 
 import './SummonerInfo.css'
 
-let soloIndex
-
 const SummonerInfo = props => {
   const { summoner } = props
   const { rankedStats } = props
+
+  let soloIndex;
 
   rankedStats.forEach((stat, index) => {
     if (stat.queueType === "RANKED_SOLO_5x5") {
@@ -20,7 +20,7 @@ const SummonerInfo = props => {
         <img src={`http://ddragon.leagueoflegends.com/cdn/9.22.1/img/profileicon/${summoner.profileIconId}.png`} alt="" />
       </div>
       <div className="TierBorder">
-        <img src={!isNaN(soloIndex) ? `https://opgg-static.akamaized.net/images/borders2/${rankedStats[soloIndex].tier.toLowerCase()}.png` : null} alt="" />
+        {soloIndex !== undefined && <img src={`https://opgg-static.akamaized.net/images/borders2/${rankedStats[soloIndex].tier.toLowerCase()}.png`} alt="" />}
       </div>
       <span className="SummonerLevel">{summoner.summonerLevel}</span>
       <span className="Name">{summoner.name}</span>

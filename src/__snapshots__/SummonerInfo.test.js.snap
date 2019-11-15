@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`summoner info renders 1`] = `
+<div
+  className="SummonerInfo"
+>
+  <div
+    className="ProfileIcon"
+  >
+    <img
+      alt=""
+      src="http://ddragon.leagueoflegends.com/cdn/9.22.1/img/profileicon/588.png"
+    />
+  </div>
+  <div
+    className="TierBorder"
+  >
+    <img
+      alt=""
+      src="https://opgg-static.akamaized.net/images/borders2/challenger.png"
+    />
+  </div>
+  <span
+    className="SummonerLevel"
+  >
+    98
+  </span>
+  <span
+    className="Name"
+  >
+    MyAir
+  </span>
+</div>
+`;
