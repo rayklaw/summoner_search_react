@@ -18,7 +18,7 @@ Create a deployment-ready build with `npm run build`.
 
 ## Screenshots
 
-![](https://github.com/rlaw2021/summoner_search_react/blob/master/Summoner%20Search%20SC1.png)
-![](https://github.com/rlaw2021/summoner_search_react/blob/master/Summoner%20Search%20SC2.png)
+![](https://github.com/rlaw2021/summoner_search_react/blob/master/Screenshot%201.png)
+![](https://github.com/rlaw2021/summoner_search_react/blob/master/Screenshot%202.png)
 
 
